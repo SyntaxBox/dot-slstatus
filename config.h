@@ -65,13 +65,16 @@ static const char unknown_str[] = "n/a";
  */
 
 static const struct arg args[] = {
-        /* function format          argument */
-	{ netspeed_rx,		"^c#f38ba8^ 󰞒  %s |"	, 	"wlp58s0"		},
-//      { cpu_perc,             "^c#f8f8f2^   %s |",       	NULL                    },
-        { ram_used,             "^c#b0e2ac^   %s |",       	NULL                    },
-	{ run_command, 		"^c#8be9fd^   %s |",	 	"/bin/sh -c \"amixer get Master | tail -n1 | grep -Po '\\[\\K[^%]*' | head -n1\""	},
-	{ wifi_essid,		"^c#00ffdd^ 󰤧  %s ", 		"wlp58s0"		},
-	{ wifi_perc,		"^c#00ffdd^% s |",		"wlp58s0"		},
-	{ battery_perc,         "^c#ffb86c^ 󰁹 %s |",          "BAT0"                  },
-        { datetime,             "^c#f1fa8c^ %s",                "%I:%M"                	},
+    /* function format            argument */
+    { netspeed_rx,   "^c#f38ba8^ 󰞒  %s |",  "wlp58s0"		            },
+    { cpu_perc,      "^c#f8f8f2^   %s |",  NULL                    },
+    { ram_used,      "^c#b0e2ac^   %s |",  NULL                    },
+    { run_command,   "^c#8be9fd^   %s |",  "/bin/sh -c \"amixer get Master | tail -n1 | grep -Po '\\[\\K[^%]*' | head -n1\"" },
+    { wifi_essid,    "^c#00ffdd^ 󰤧  %s ",   "wlp58s0"               },
+    { wifi_perc,     "^c#00ffdd^% s |",     "wlp58s0"               },
+    /* Change battery icon based on charging state */
+    { battery_state, "^c#ffb86c^ %s",     "BAT0",                 },
+    { battery_perc,  " %s |",               "BAT0"                  },  /* Show battery percentage */
+    { datetime,      "^c#f1fa8c^ %s",       "%I:%M"                 },
 };
+
